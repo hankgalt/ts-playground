@@ -237,7 +237,7 @@ const heapify = (nums: number[], i: number, max: number): void => {
   }
 }
 
-const swap = (nums: number[], i: number, j: number): void => {
+export const swap = (nums: number[], i: number, j: number): void => {
   const temp = nums[i]
   nums[i] = nums[j]
   nums[j] = temp

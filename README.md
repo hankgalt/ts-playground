@@ -1,5 +1,7 @@
 # Typescript playground
 
+node -v > .nvmrc
+
 git init
 npm init -y
 npm i -D typescript
