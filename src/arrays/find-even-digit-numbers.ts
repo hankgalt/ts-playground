@@ -1,5 +1,5 @@
 export const findEvenDigitNumbers = (nums: number[]): number => {
-  var count = 0
+  let count = 0
 
   for (let i = 0; i < nums.length; i++) {
     const digitCount = numDigits(nums[i])
@@ -14,8 +14,8 @@ export const findEvenDigitNumbers = (nums: number[]): number => {
 const numDigits = (num: number): number => {
   // return Math.max(Math.floor(Math.log10(Math.abs(num))), 0) + 1
   // return `${num}`.length // faster, extra space
-  var count = 0
-  var curr = num
+  let count = 0
+  let curr = num
   while (curr > 0) {
     curr = Math.floor(curr / 10)
     count++

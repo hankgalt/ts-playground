@@ -1,13 +1,14 @@
 # Typescript playground
 
-node -v > .nvmrc
+## setup
 
-git init
-npm init -y
-npm i -D typescript
-npx tsc --init
-npm i -D jest ts-jest @types/jest
-npx ts-jest config:init
+- node -v > .nvmrc
+- git init
+- npm init -y
+- npm i -D typescript
+- npx tsc --init
+- npm i -D jest ts-jest @types/jest
+- npx ts-jest config:init
 
 ## debugging
 
@@ -15,10 +16,10 @@ npx ts-jest config:init
 - Set a break-point in your file.
 - Run tests in that terminal in a Watch mode npm test --watch
 
-## Lint
+## linting
 
-npm i --save-dev eslint
-./node_modules/.bin/eslint --init
-npm install eslint-config-prettier prettier --save-dev
-touch .prettierrc.json
-touch .eslintignore
+- npm i --save-dev eslint
+- ./node_modules/.bin/eslint --init
+- npm install eslint-config-prettier prettier --save-dev
+- touch .prettierrc.json
+- touch .eslintignore

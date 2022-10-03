@@ -48,11 +48,9 @@ describe('bubbleSort ', () => {
     for (let x = 0; x < generatedCases.length; x++) {
       const numItems = generatedCases[x]
       const { nums, smallest, largest } = numGenerator(1, 34, numItems)
-      const start = Date.now()
+      console.time(`${numItems} items bubbleSort took`)
       const sortedNums = bubbleSort(nums)
-      console.log(
-        `bubbleSort took ${Date.now() - start} msecs to sort ${numItems} items`
-      )
+      console.timeEnd(`${numItems} items bubbleSort took`)
       expect(sortedNums.length).toBe(nums.length)
       expect(sortedNums[0]).toBe(smallest)
       expect(sortedNums[sortedNums.length - 1]).toBe(largest)
@@ -77,13 +75,9 @@ describe('selectionSort ', () => {
     for (let x = 0; x < generatedCases.length; x++) {
       const numItems = generatedCases[x]
       const { nums, smallest, largest } = numGenerator(1, 34, numItems)
-      const start = Date.now()
+      console.time(`${numItems} items selectionSort took`)
       const sortedNums = selectionSort(nums)
-      console.log(
-        `selectionSort took ${
-          Date.now() - start
-        } msecs to sort ${numItems} items`
-      )
+      console.timeEnd(`${numItems} items selectionSort took`)
       expect(sortedNums.length).toBe(nums.length)
       expect(sortedNums[0]).toBe(smallest)
       expect(sortedNums[sortedNums.length - 1]).toBe(largest)
@@ -108,13 +102,9 @@ describe('insertionSort ', () => {
     for (let x = 0; x < generatedCases.length; x++) {
       const numItems = generatedCases[x]
       const { nums, smallest, largest } = numGenerator(1, 34, numItems)
-      const start = Date.now()
+      console.time(`${numItems} items insertionSort took`)
       const sortedNums = insertionSort(nums)
-      console.log(
-        `insertionSort took ${
-          Date.now() - start
-        } msecs to sort ${numItems} items`
-      )
+      console.timeEnd(`${numItems} items insertionSort took`)
       expect(sortedNums.length).toBe(nums.length)
       expect(sortedNums[0]).toBe(smallest)
       expect(sortedNums[sortedNums.length - 1]).toBe(largest)
@@ -139,11 +129,9 @@ describe('mergeSort ', () => {
     for (let x = 0; x < generatedCases.length; x++) {
       const numItems = generatedCases[x]
       const { nums, smallest, largest } = numGenerator(1, 34, numItems)
-      const start = Date.now()
+      console.time(`${numItems} items mergeSort took`)
       const sortedNums = mergeSort(nums)
-      console.log(
-        `mergeSort took ${Date.now() - start} msecs to sort ${numItems} items`
-      )
+      console.timeEnd(`${numItems} items mergeSort took`)
       expect(sortedNums.length).toBe(nums.length)
       expect(sortedNums[0]).toBe(smallest)
       expect(sortedNums[sortedNums.length - 1]).toBe(largest)
@@ -168,11 +156,9 @@ describe('quickSort ', () => {
     for (let x = 0; x < generatedCases.length; x++) {
       const numItems = generatedCases[x]
       const { nums, smallest, largest } = numGenerator(1, 34, numItems)
-      const start = Date.now()
+      console.time(`${numItems} items quickSort took`)
       const sortedNums = quickSort(nums)
-      console.log(
-        `quickSort took ${Date.now() - start} msecs to sort ${numItems} items`
-      )
+      console.timeEnd(`${numItems} items quickSort took`)
       expect(sortedNums.length).toBe(nums.length)
       expect(sortedNums[0]).toBe(smallest)
       expect(sortedNums[sortedNums.length - 1]).toBe(largest)
@@ -197,11 +183,9 @@ describe('heapSort ', () => {
     for (let x = 0; x < generatedCases.length; x++) {
       const numItems = generatedCases[x]
       const { nums, smallest, largest } = numGenerator(1, 34, numItems)
-      const start = Date.now()
+      console.time(`${numItems} items heapSort took`)
       const sortedNums = heapSort(nums)
-      console.log(
-        `heapSort took ${Date.now() - start} msecs to sort ${numItems} items`
-      )
+      console.timeEnd(`${numItems} items heapSort took`)
       expect(sortedNums.length).toBe(nums.length)
       expect(sortedNums[0]).toBe(smallest)
       expect(sortedNums[sortedNums.length - 1]).toBe(largest)

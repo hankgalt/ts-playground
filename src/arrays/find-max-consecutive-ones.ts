@@ -1,6 +1,6 @@
 export const findMaxConsecutiveOnes = (nums: number[]): number => {
-  var largest = 0
-  var current = 0
+  let largest = 0
+  let current = 0
 
   for (let i = 0; i < nums.length; i++) {
     if (nums[i] === 1) {

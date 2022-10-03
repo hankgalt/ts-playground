@@ -1,8 +1,8 @@
-import { heapSort } from './sort'
+// import { heapSort } from './sort'
 
 export const heightChecker = (nums: number[]): number => {
-  var count = 0
-  var sorted: number[] = [...nums].sort((x: number, y: number): number => {
+  let count = 0
+  const sorted: number[] = [...nums].sort((x: number, y: number): number => {
     return x - y
   })
   // var sorted = heapSort([...nums])

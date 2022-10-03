@@ -1,9 +1,9 @@
 import { swap } from './sort'
 
 export const sortColors = (nums: number[]): number[] => {
-  var low = 0
-  var mid = 0
-  var high = nums.length - 1
+  let low = 0
+  let mid = 0
+  let high = nums.length - 1
 
   while (mid <= high) {
     const curr = nums[mid]

@@ -1,8 +1,8 @@
 import { swap } from '../sorting/sort'
 
 export const moveZeroes = (nums: number[]): void => {
-  var l = 0
-  var r = l
+  let l = 0
+  let r = l
   while (r < nums.length) {
     while (nums[r] === 0) {
       r++

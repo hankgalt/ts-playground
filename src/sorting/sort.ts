@@ -3,11 +3,11 @@ export const selectionSort = (nums: number[]): number[] => {
     return nums
   }
   // Traverse through all the elements in the number array.
-  for (var i = 0; i < nums.length; i++) {
+  for (let i = 0; i < nums.length; i++) {
     // Set the current item to be the smallest/minimum.
-    var minIdx = i
+    let minIdx = i
     // Find the minimum element in remaining unsorted array.
-    for (var j = i + 1; j < nums.length; j++) {
+    for (let j = i + 1; j < nums.length; j++) {
       // If the next number is smaller than the current number,
       // reassign our reference to the the index of the smallest number
       if (nums[j] < nums[minIdx]) {
@@ -26,11 +26,11 @@ export const bubbleSort = (nums: number[]): number[] => {
   if (nums.length <= 1) {
     return nums
   }
-  var isSorted = false
+  let isSorted = false
   while (!isSorted) {
     isSorted = true
     // Iterate until we get to the last element
-    for (var i = 1; i < nums.length; i++) {
+    for (let i = 1; i < nums.length; i++) {
       // If the element to the left is bigger, then swap the element
       // that we're currently looking at with its left neighbor.
       if (nums[i - 1] > nums[i]) {
@@ -49,17 +49,19 @@ export const insertionSort = (nums: number[]): number[] => {
   }
 
   // Traverse through length of array, starting with the element at index 0.
-  for (var i = 0; i < nums.length; i++) {
+  for (let i = 0; i < nums.length; i++) {
     // current place in the unsorted portion of the array.
     // currentUnsortedItem is the item we will be moving into the "sorted" subset of our array.
-    let current = nums[i]
+    const current = nums[i]
     // Iterate through sorted items.
     // If the current unsorted item is smaller than the item to its left,
     // move the current item back one position in the array.
     // This loop will never run for the very first unsorted item at index 0.
-    for (var j = i; j > 0 && current < nums[j - 1]; j--) {
+    let j = i
+    while (j > 0 && current < nums[j - 1]) {
       // Shift item left in the sorted subset of the array.
       nums[j] = nums[j - 1]
+      j--
     }
     // Shift item to the right in the sorted subset fo the array.
     nums[j] = current
@@ -74,9 +76,9 @@ export const mergeSort = (nums: number[]): number[] => {
 
   // If array contains more than one element,
   // split it into two left and right parts.
-  var mid = Math.floor(nums.length / 2)
-  var left = nums.slice(0, mid)
-  var right = nums.slice(mid)
+  const mid = Math.floor(nums.length / 2)
+  const left = nums.slice(0, mid)
+  const right = nums.slice(mid)
 
   // Recursively call mergeSort() on left and right sublists.
   mergeSort(left)
@@ -138,8 +140,8 @@ const quickSorter = (nums: number[], left: number, right: number): number[] => {
 }
 
 const merge = (left: number[], right: number[], nums: number[]): void => {
-  var idx = 0
-  while (left.length && right.length) {
+  let idx = 0
+  while (left.length > 0 && right.length > 0) {
     if (right[0] < left[0]) {
       const num = right.shift()
       if (num) {
@@ -153,14 +155,14 @@ const merge = (left: number[], right: number[], nums: number[]): void => {
     }
   }
 
-  while (left.length) {
+  while (left.length > 0) {
     const num = left.shift()
     if (num) {
       nums[idx++] = num
     }
   }
 
-  while (right.length) {
+  while (right.length > 0) {
     const num = right.shift()
     if (num) {
       nums[idx++] = num
@@ -205,7 +207,7 @@ const partition = (nums: number[], left: number, right: number): number => {
 }
 
 const buildMaxHeap = (nums: number[]): void => {
-  var i = Math.floor(nums.length / 2 - 1)
+  let i = Math.floor(nums.length / 2 - 1)
   while (i >= 0) {
     heapify(nums, i, nums.length)
     i -= 1
@@ -213,7 +215,7 @@ const buildMaxHeap = (nums: number[]): void => {
 }
 
 const heapify = (nums: number[], i: number, max: number): void => {
-  var idx, left, right
+  let idx, left, right
 
   while (i < max) {
     idx = i

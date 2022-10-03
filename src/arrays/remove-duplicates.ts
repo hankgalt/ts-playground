@@ -1,6 +1,6 @@
 export const removeDuplicates = (nums: number[]): number[] => {
-  var l = 0
-  var r = l
+  let l = 0
+  let r = l
   while (r < nums.length - 1) {
     while (nums[r] === nums[r + 1]) {
       r++
