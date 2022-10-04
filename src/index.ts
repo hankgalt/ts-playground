@@ -1,29 +1,31 @@
-console.log('Hey there,', process.argv[2])
+import { EMITTER_EVENTS, LOG_LEVEl } from './types'
+import { Emitter } from './utils/emitter'
+
+Emitter.emit(EMITTER_EVENTS.LOG, {
+  level: LOG_LEVEl.INFO,
+  msg: 'Hey there, %s info',
+  args: [process.argv[2]]
+})
+Emitter.emit(EMITTER_EVENTS.LOG, {
+  level: LOG_LEVEl.WARN,
+  msg: 'Hey there, %s warn',
+  args: [process.argv[2]]
+})
+Emitter.emit(EMITTER_EVENTS.LOG, {
+  level: LOG_LEVEl.DEBUG,
+  msg: 'Hey there, %s debug',
+  args: [process.argv[2]]
+})
+Emitter.emit(EMITTER_EVENTS.LOG, {
+  level: LOG_LEVEl.ERROR,
+  msg: `Hey there, ${process.argv[2]} error`,
+  args: [{ name: process.argv[2] }]
+})
+
 process.argv.forEach((val, index) => {
-  console.log(`${index}: ${val}`)
+  Emitter.emit(EMITTER_EVENTS.LOG, {
+    level: LOG_LEVEl.INFO,
+    msg: `info ${index}: ${val}`,
+    args: [{ index, val }]
+  })
 })
-
-console.time('For loop time')
-const readline = require('readline')
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-})
-
-const query = 'What is your name?\n'
-rl.question(query, (answer: string) => {
-  console.trace(`Hello ${answer}!`)
-
-  rl.close()
-})
-console.timeEnd('For loop time')
-console.table([
-  { Fruit: 'Apple', Quantity: 5 },
-  { Fruit: 'Mango', Quantity: 7 },
-])
-
-// console.warn('This is a warning!');
-
-// console.error('This is an error');
-
-// console.error(new Error('This is a different error'));
