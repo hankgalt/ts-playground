@@ -5,7 +5,7 @@ const definedCases: Array<[number[], number]> = [
   [[555, 901, 482, 1771], 1],
 ]
 
-describe.only('findEvenDigitNumbers ', () => {
+describe('findEvenDigitNumbers ', () => {
   it('should return count for standard cases', () => {
     for (let x = 0; x < definedCases.length; x++) {
       const testcase = definedCases[x][0]

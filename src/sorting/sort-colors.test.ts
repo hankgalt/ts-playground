@@ -11,7 +11,7 @@ const definedCases: Array<[number[], number[]]> = [
   ],
 ]
 
-describe.only('sortColors ', () => {
+describe('sortColors ', () => {
   it('should return sorted values for standard cases', () => {
     for (let x = 0; x < definedCases.length; x++) {
       const testcase = definedCases[x][0]

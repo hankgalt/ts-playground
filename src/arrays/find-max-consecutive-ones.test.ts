@@ -5,7 +5,7 @@ const definedCases: Array<[number[], number]> = [
   [[1, 0, 1, 1, 0, 1], 2],
 ]
 
-describe.only('findMaxConsecutiveOnes ', () => {
+describe('findMaxConsecutiveOnes ', () => {
   it('should return count for standard cases', () => {
     for (let x = 0; x < definedCases.length; x++) {
       const testcase = definedCases[x][0]

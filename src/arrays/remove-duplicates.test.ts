@@ -12,7 +12,7 @@ const definedCases: Array<[number[], number[]]> = [
   ],
 ]
 
-describe.only('removeDuplicates ', () => {
+describe('removeDuplicates ', () => {
   it('should return count for standard cases', () => {
     for (let x = 0; x < definedCases.length; x++) {
       const testcase = definedCases[x][0]
